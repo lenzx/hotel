@@ -71,4 +71,4 @@ class pasajero(DB):
 
         except Exception as e:
             print("Error: ", e.args)
-pasajero('111111','jose salgado').verPasajeroRut('222222')
+
