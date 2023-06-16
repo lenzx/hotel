@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 16-06-2023 a las 03:51:41
+-- Tiempo de generación: 16-06-2023 a las 21:30:13
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -44,6 +44,15 @@ CREATE TABLE `costo_habitacion` (
   `COSTO_BASE` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Volcado de datos para la tabla `costo_habitacion`
+--
+
+INSERT INTO `costo_habitacion` (`ID_COSTO_HABITACION`, `ID_TIPO_HABITACION`, `COSTO_BASE`) VALUES
+(1, 1, 10000),
+(2, 2, 20000),
+(3, 3, 30000);
+
 -- --------------------------------------------------------
 
 --
@@ -66,8 +75,17 @@ CREATE TABLE `habitacion` (
   `ID_TIPO_HABITACION` int(11) NOT NULL,
   `CAPACIDAD_MAX` int(11) NOT NULL,
   `ORIENTACION` char(20) NOT NULL,
-  `MIN_PASAJERO` int(11) NOT NULL
+  `MIN_PASAJERO` int(11) NOT NULL,
+  `HABILITAR` tinyint(1) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `habitacion`
+--
+
+INSERT INTO `habitacion` (`N_HABITACION`, `ID_TIPO_HABITACION`, `CAPACIDAD_MAX`, `ORIENTACION`, `MIN_PASAJERO`, `HABILITAR`) VALUES
+(1, 3, 4, 'sur', 2, 1),
+(2, 1, 10, 'norte', 3, 1);
 
 -- --------------------------------------------------------
 
