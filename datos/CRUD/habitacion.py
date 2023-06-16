@@ -45,5 +45,4 @@ class TipoHabitacion(DB):
             print("Error: ", e.args)
 
 
-TipoHabitacion('1','wdasdasd').modificarTipoHabitacion(2,"Comun")
 
