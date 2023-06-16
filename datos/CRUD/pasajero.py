@@ -29,6 +29,16 @@ class pasajero(DB):
         except Exception as e:
             print("Error: ", e.args)
 
+    def modificarPasajero(self,rut,nuevoNombre):
+        val = (nuevoNombre,rut)
+        sql = "UPDATE pasajero SET NOMBRE = %s WHERE RUT_PASAJERO = %s"
+        try:
+            self.cursor.execute(sql,val)
+            self.connect.commit()
+            print('cambio realizado')
+        except Exception as e:
+            print("Error: ", e.args)
+
     def verPasajero(self):
         sql = "SELECT * FROM pasajero ORDER BY RUT_PASAJERO asc"
         try:
